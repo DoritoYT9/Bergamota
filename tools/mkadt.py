@@ -41,6 +41,11 @@ QEMU_VTIMER_INTID = 27
 BT_MAC = bytes([0x02, 0x00, 0x5e, 0x77, 0xb0, 0x01])
 
 BOARDS = {
+    'miatoll': dict(
+        # Alias de sweet: mismo SoC (SM7150/SM7125), mismos valores
+        compat=['xiaomi,miatoll', 'qcom,sm7125'],
+        framebuffer=(0x9c000000, 1080, 2400),
+    ),
     'sweet': dict(
         fb=(0x9c000000, 0x1700000), fb_wh=(1080, 2400),
         compat=['xiaomi,sweet', 'qcom,sm7150'],
